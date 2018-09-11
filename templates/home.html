@@ -1,0 +1,42 @@
+{% extends 'index.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<br><br>
+	<p>You are now logged in</p>
+	<div id="contentdiv">
+		<div id="profilepicdiv">
+			<img style="margin-left: 80px; border-radius: 50%" src="{{user.userprofile.image.url}}" width="125" height="125" alt="{{alt}} ">
+		</div>
+		<div id="userinfodiv">	
+		<div id="usernamediv">	
+		{{user.username}}
+		</div>
+		<div class="followdiv">
+			<a id="atagfollow" href="{% url 'follower' user.pk %}"><div><p> <strong>{{following.count}}</strong> Follower</p></div></a>
+			<a id="atagfollow"  href="{% url 'following' user.pk %}"><div><p><strong>{{follower.count}}</strong> Following</p></div></a>
+			<a id="addpost" href="{% url 'addpost' %}"><p><strong>Add Post</strong></p></a>
+		</div>
+		
+		<div style="width: 750px;height: 900px;position: relative;left: -300px;top:80px;padding: 25px;">
+			
+			<div style="position: absolute;float: left;">
+				{% for post in posts %}
+			<li style="display: inline-block;padding-right: 40px; margin-left: 20px; position: relative;z-index: 1 ">
+				<!-- <h1>{{post.post}}</h1> -->
+
+				<div> <a href="{{post.picture.url}}" target="_blank">
+					<img src="{{post.picture.url}}" width="150" height="200" alt="{{post.post}}">
+				</a></div>
+				<h4 style="margin-left: 50px">{{post.post}}</h4>
+				</li>
+				{% endfor %}
+			</div>	
+			
+		</div>				
+
+
+	</div>
+	</div>
+	{% endblock %}

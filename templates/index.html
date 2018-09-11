@@ -1,0 +1,119 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Instagram App{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+   	<style>
+	body {margin:0;}
+
+	ul {
+	    list-style-type: none;
+	    margin: 0;
+	    padding: 0;
+	    overflow: hidden;
+	    background-color: white;
+	    position: fixed;
+	    top: 0;
+	    width: 100%;
+	    border-bottom: 1px solid #e7e7e7;
+	}
+	
+	li {
+	    float: left;
+	}
+
+	li a {
+	    display: block;
+	    color: grey;
+	    text-align: center;
+	    padding: 14px 16px;
+	    text-decoration: none;
+	}
+
+	
+	.searchb{
+		margin-top: 25px;
+		margin-left: 100px;
+		width: 200px;
+		height: 20px;
+	}
+
+	#contentdiv{
+		margin-left: auto;
+		margin-right: auto;
+		width: 900px;
+		height: 800px;
+
+	}
+	#profilepicdiv{
+		margin-top: 50px;
+		margin-left: 18px;
+		height: 130px;
+		width: 270px;
+		float: left;
+	}
+	#userinfodiv{
+		margin-top: 50px;
+		margin-left: 25px;
+		height: 130px;
+		width: 500px;
+		float: left;
+	}
+	#usernamediv{
+		margin-top: -2px;
+		height: 30px;
+		width: 498px;
+		border-collapse: collapse;
+		font-size: 30px;
+	}
+	.followdiv{
+		margin-top: 10px;
+		height: 35px;
+		width: 498px;
+	}
+	#atagfollow{
+		float: left;
+		margin-top: -5px;
+		margin-left: 10px;
+		text-decoration: none;
+	}
+	#addpost{
+		position: relative;
+		top: 35px;
+		left: -160px
+	}
+
+	</style>
+
+    
+</head>
+<body>
+
+
+	<ul style="z-index: 99">
+		<li><a class="active" href="{% url 'alluser_post' %}"><img id="instaimg" style="height: 50px; width: 50px; margin-left: 200px;" src="{% static 'instagram-new.png' %}" alt="image"></a></li>
+	  	<li><a class="active" href="{% url 'alluser_post' %}"><img id="instaimg" style="height: 50px; width: 100px;" src="{% static 'instagram_PNG5.png' %}" alt="image"></a></li>
+	  	<li style="margin-top: 30px; margin-left: 100px;">
+	  		<form method="GET" action= "{% url 'search' %}">
+	  			<input type='text' name='q' placeholder='search'>
+	  			<input type='submit' value='search'>
+	  			
+	  		</form>
+	  	</li>
+	  	<li><a class="searchb" style="margin-top: 15px; margin-left: 200px;" href="{% url 'user_logout' %}">Logout</a></li>
+	  	<li><a href="{% url 'user_home' %}"><img style="height: 35px; width: 35px; margin-top: 7px; margin-left: -110px;" src="{% static 'userhome.png' %}" alt="image"></a></li>
+	</ul>
+
+
+	        
+
+        {% block content %}{% endblock  %}
+    
+
+    
+</body>
+</html>
+

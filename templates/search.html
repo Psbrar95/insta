@@ -1,0 +1,16 @@
+{% extends 'index.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<br><br>
+	<h2>Followers</h2>
+        {% for user in users %}
+            <a href="{% url 'home_with_pk' pk=user.pk %}">
+                <h3>{{ user.username }}</h3>
+            </a>
+
+
+        {% endfor %}
+
+{% endblock %}

@@ -1,0 +1,56 @@
+html,body{height: 100%; width: 100%; margin: 0; }
+
+
+#instaimg{
+	height: 50px;
+	width: 220px;
+	margin-top: 20px;
+	margin-left: 35px;
+	margin-right: auto;
+}	
+#inputlogin{
+height: 30px;
+width: 220px;
+margin-top: 20px;
+margin-left: 35px;
+margin-right: auto;
+background-color: #F2F2F2;
+}
+#submitb{
+height: 30px;
+width: 220px;
+margin-top: 20px;
+margin-left: 35px;
+margin-right: auto;
+background-color: #67C8FF;
+color: white;
+}
+#logindiv{
+	height: 250px;
+	width: 300px;
+	margin-top: 10%;
+	margin-left: auto;
+	margin-right: auto;
+/*	border: 1px solid black;
+*/	background-color: white;
+}
+
+#signupdiv{
+	height: 70px;
+	width: 300px;
+	margin-top: 1%;
+	margin-left: auto;
+	margin-right: auto;
+/*	border: 1px solid black;
+*/	background-color: white;
+	text-align: center;
+
+}
+
+p.signuptxt{
+	margin-top: 1px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: auto;
+	
+}

@@ -1,0 +1,28 @@
+<!doctype html>
+{% load static  %}
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="{% static 'logincss.css' %}">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body style="background-color: #F2F2F2;">
+	<div id="logindiv">
+		<img id="instaimg" src="{% static 'instagram_PNG5.png' %}" alt="image">
+		<form action="/login/" method="post">
+			{% csrf_token %}
+			<input id="inputlogin" type="text" placeholder="Username,Email or Phonenumber" name="username" id="username" required>
+			<input id="inputlogin" type="password" placeholder="Enter Password" name="password" id="password" required>
+			<p>{{error}}</p>
+			<button id="submitb" type="submit">Log in</button>
+
+		</form>
+		
+	</div>
+	<div id="signupdiv">
+		<p class="signuptxt"> Don't have an account?</p>
+		
+	</div>
+	
+</body>l
+</html>

@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<br><br>
+	<h2>Following</h2>
+        {% for friend in following %}
+        	<a href="{% url 'home_with_pk' pk=friend.following.pk %}">
+            	<h3>{{ friend.following.username }}</h3>
+            </a>
+            {% if friend.following  in temp %} 
+            <a href="{% url 'change_friends' operation='remove' pk=friend.following.pk %}">
+            <button type="button" class="btn btn-default">Unfollow</button>
+            </a>
+            {% endif %}
+        {% endfor %}
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<br><br>
+	<p>You are now logged in</p>
+	<div id="contentdiv">
+		<div id="userinfodiv">	
+		<div id="usernamediv">	
+		
+		</div>
+		
+		  {% for post in posts %}
+     <div style="margin-top: -20px">
+         <li style="display:inline-block; padding:40px; margin-left:600px; position:relative; left:-450px; top: -100px">
+
+            <h1>{{ post.user.username }}</h1>
+
+
+           <div>  <a href="{{post.picture.url}}" target="_blank">
+   			 <img src="{{post.picture.url}}" width="400" height="400" alt="{{post.post}}">
+				</a></div>			
+			<h3> {{post.post}}</h3>
+		</div>	
+		{% endfor %}
+	{% endblock %}

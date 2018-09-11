@@ -136,3 +136,7 @@ def search(request):
 		users = User.objects.filter(username__icontains=q)
 		return render(request,'search.html',{'users':users,'query':q})
 	return HttpResponse('Please submit a search term')		
+
+
+
+	#fedfdfdfdfdfdfdfdfdfdfdfdfd
